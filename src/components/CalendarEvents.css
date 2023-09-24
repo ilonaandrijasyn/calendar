@@ -1,0 +1,6 @@
+.event {
+    background-color: lightblue;
+    border: 1px solid grey;
+    position: absolute;
+    width: 250px;
+}
