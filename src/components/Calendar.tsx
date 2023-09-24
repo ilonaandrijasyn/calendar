@@ -8,37 +8,37 @@ const events = [
     name: 'Event5',
     startDate: new Date('2023-09-23T08:45:00'),
     endDate: new Date('2023-09-23T09:45:00'),
-    lengthMin: 60,
+    lengthMins: 60,
   },
   {
     name: 'Event1',
     startDate: new Date('2023-09-23T08:00:00'),
     endDate: new Date('2023-09-23T08:30:00'),
-    lengthMin: 30,
+    lengthMins: 30,
   },
   {
     name: 'Event2',
     startDate: new Date('2023-09-23T08:30:00'),
     endDate: new Date('2023-09-23T09:00:00'),
-    lengthMin: 30,
+    lengthMins: 30,
   },
   {
     name: 'Event4',
     startDate: new Date('2023-09-23T08:30:00'),
     endDate: new Date('2023-09-23T08:45:00'),
-    lengthMin: 15,
+    lengthMins: 15,
   },
   {
     name: 'Event3',
     startDate: new Date('2023-09-23T08:15:00'),
     endDate: new Date('2023-09-23T08:30:00'),
-    lengthMin: 15,
+    lengthMins: 15,
   },
   {
     name: 'Event6',
     startDate: new Date('2023-09-23T09:15:00'),
     endDate: new Date('2023-09-23T10:30:00'),
-    lengthMin: 75,
+    lengthMins: 75,
   },
 ]
 
@@ -60,8 +60,6 @@ const clusteredEvents = sortedEvents.reduce<CalendarEvent[][]>(
   },
   [[]],
 )
-
-console.log(clusteredEvents)
 
 function Calendar() {
   return <CalendarEvents events={clusteredEvents} />

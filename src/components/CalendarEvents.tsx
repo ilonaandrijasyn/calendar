@@ -1,15 +1,10 @@
 import React from 'react'
 import './CalendarEvents.css'
-
-interface CalendarEvent {
-  name: string
-  startDate: Date
-  endDate: Date
-  lengthMin: number
-}
+import { type CalendarEvent } from '../types'
 
 function CalendarEvents({ events }: { events: CalendarEvent[][] }) {
-  const firstEventStartTime = events[0][0].startDate.getMinutes() + events[0][0].startDate.getHours() * 60
+  const firstEventStartTime =
+    events[0]?.[0] === undefined ? 0 : events[0][0].startDate.getMinutes() + events[0][0].startDate.getHours() * 60
 
   return (
     <div>
@@ -18,9 +13,9 @@ function CalendarEvents({ events }: { events: CalendarEvent[][] }) {
           <div
             className="event"
             style={{
-              height: `${event.lengthMin}px`,
+              height: `${event.lengthMins}px`,
               top: `${event.startDate.getMinutes() + event.startDate.getHours() * 60 + 2 - firstEventStartTime}px`,
-              left: `${clusterIndex === 0 ? 0 : 250 * clusterIndex}px`,
+              left: `${250 * clusterIndex}px`,
             }}
             key={event.name}
           >
